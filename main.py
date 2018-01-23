@@ -10,13 +10,13 @@ def main(file_path, font_path, font_size):
 
     inv_image[inv_image < 1.5 * (inv_image.min())] = 0
     characters = CharacterParser().parse(font_path, font_size)
-    image_parser = ImageParser(characters, inv_image,min_correlation=0.70)
+    image_parser = ImageParser(characters, inv_image,min_correlation=0.8)
 
     result = image_parser.parse()
     print(result)
     image_parser.print_characters_stats()
 np.warnings.filterwarnings('ignore')
-main("serif.png",'DejaVuSerifCondensed-Bold.ttf',42)
+main("dejavu.png",'DejaVuSans.ttf',35)
 
 
 
